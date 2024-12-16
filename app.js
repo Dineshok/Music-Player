@@ -101,14 +101,17 @@ forward.addEventListener("click", function () {
 
 //Logic for Backward button
 backward.addEventListener("click", function () {
-    changeSong(songData[songNumber])
-    songNumber--
-    play()
-    if (songNumber < 0) songNumber = songData.length - 1
-    //heart reset
-    heart.style.color = "black"
-    heartClicked = false
-})
+    songNumber--; // Decrement songNumber first
+    if (songNumber < 0) songNumber = songData.length - 1; // Wrap around to the last song if index goes below 0
+
+    changeSong(songData[songNumber]); // Load the previous song
+    play(); // Play the song
+
+    // Reset heart state
+    heart.style.color = "black";
+    heartClicked = false;
+});
+
 
 
 
