@@ -12,13 +12,19 @@ let songData = [
         songName: "Do Anything"
     },
     {
+        image: "images/Minsara Kanavu.jpg",
+        audio: "audios/Minsara Kanavu.mp3",
+        author: "A.R Rahman",
+        songName: "Priya Falls In Love"
+    },
+    {
         image: "images/Theera Ulaa.jpg",
         audio: "audios/Theera Ulaa.mp3",
         author: "A.R Rahman",
         songName: "Theera Ulaa"
     },
     {
-        image: "images/Bombay theme.png",
+        image: "images/Bombay.jpg",
         audio: "audios/Bombay theme.mp3",
         author: "A.R Rahman",
         songName: "Bombay Theme"
@@ -28,7 +34,13 @@ let songData = [
         audio: "audios/How_to_Name_It.mp3",
         author: "Ilaiyaraaja",
         songName: "How To Name It"
-    }
+    },
+    {
+        image: "images/Vinmeengalai Thandi.jpg",
+        audio: "audios/Vinmeengalai Thandi.mp3",
+        author: "A.R Rahman",
+        songName: "Vinmeengalai Thandi"
+    },
 ]
 
 //Initially the song is not playing
