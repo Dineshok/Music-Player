@@ -117,6 +117,7 @@ backward.addEventListener("click", function () {
 
 
 
+
 //Time
 const currentTime = document.querySelector("#currentTime")
 const totalTime = document.querySelector("#totalTime")
