@@ -88,21 +88,23 @@ function changeSong(info) {
 //the next song location in data
 let songNumber = 1
 
-//Logic for Forward button
+// Forward Button Logic
 forward.addEventListener("click", function () {
-    changeSong(songData[songNumber])
-    songNumber++
-    play()
-    if (songNumber >= songData.length) songNumber = 0
-    //heart reset
-    heart.style.color = "black"
-    heartClicked = false
-})
+    songNumber++; // Move to the next song
+    if (songNumber >= songData.length) songNumber = 0; // Wrap around to the first song if it exceeds the playlist length
 
-//Logic for Backward button
+    changeSong(songData[songNumber]); // Load the next song
+    play(); // Play the song
+
+    // Reset heart state
+    heart.style.color = "black";
+    heartClicked = false;
+});
+
+// Backward Button Logic
 backward.addEventListener("click", function () {
-    songNumber--; // Decrement songNumber first
-    if (songNumber < 0) songNumber = songData.length - 1; // Wrap around to the last song if index goes below 0
+    songNumber--; // Move to the previous song
+    if (songNumber < 0) songNumber = songData.length - 1; // Wrap around to the last song if it goes below 0
 
     changeSong(songData[songNumber]); // Load the previous song
     play(); // Play the song
