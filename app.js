@@ -6,8 +6,8 @@ const backward = document.querySelector("#backward")
 
 let songData = [
     {
-        image: "images/Do anything.jpg",
-        audio: "audios/Do anything.mp3",
+        image: "images/Do Anything.jpg",
+        audio: "audios/Do Anything.mp3",
         author: "Ilaiyaraaja",
         songName: "Do Anything"
     },
@@ -70,6 +70,8 @@ function changeSong(info) {
     auth.textContent = info.author
     song.src = info.audio
     song.load();
+
+    play()
 }
 //the next song location in data
 let songNumber = 1
