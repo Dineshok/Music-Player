@@ -24,8 +24,8 @@ let songData = [
         songName: "Bombay Theme"
     },
     {
-        image: "images/How to Name It.jpg",
-        audio: "audios/How to name it.mp3",
+        image: "images/How_to_Name_It.jpg",
+        audio: "audios/How_to_Name_It.mp3",
         author: "Ilaiyaraaja",
         songName: "How To Name It"
     }
@@ -69,6 +69,7 @@ function changeSong(info) {
     songname.textContent = info.songName
     auth.textContent = info.author
     song.src = info.audio
+    song.load();
 }
 //the next song location in data
 let songNumber = 1
@@ -143,13 +144,30 @@ heart.addEventListener("click", function () {
 const shuffle = document.querySelector("#shuffle")
 
 shuffle.addEventListener("click", function () {
-    let n = Math.floor(Math.random() * (songData.length))
-    changeSong(songData[n])
-    play()
-    //heart reset
-    heart.style.color = "black"
-    heartClicked = false
-})
+    let randomIndex = Math.floor(Math.random() * songData.length);
+    while (randomIndex === songNumber) {
+        randomIndex = Math.floor(Math.random() * songData.length);
+    }
+    songNumber = randomIndex;
+    changeSong(songData[songNumber]);
+    play();
+
+    // Reset heart
+    heart.style.color = "black";
+    heartClicked = false;
+});
+
+
+
+song.addEventListener("loadedmetadata", function () {
+    let totalTimeOfSong = song.duration;
+
+    let totalTimeInMinutes = Math.floor(totalTimeOfSong / 60);
+    let totalTimeInSeconds = Math.floor(totalTimeOfSong % 60);
+    if (totalTimeInSeconds <= 9) totalTimeInSeconds = `0${totalTimeInSeconds}`;
+
+    totalTime.textContent = `${totalTimeInMinutes}:${totalTimeInSeconds}`;
+});
 
 
 
