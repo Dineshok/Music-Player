@@ -86,7 +86,7 @@ function changeSong(info) {
     play()
 }
 //the next song location in data
-let songNumber = 1
+let songNumber = 0
 
 // Forward Button Logic
 forward.addEventListener("click", function () {
